@@ -6,14 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/listView"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/l1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp">
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:backgroundTint="@color/cardview_shadow_end_color"
+             />
+    </com.google.android.material.card.MaterialCardView>
     <LinearLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
@@ -21,9 +32,10 @@
         android:weightSum="100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/listView"
+        app:layout_constraintTop_toBottomOf="@id/card"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_weight="90"
@@ -63,9 +75,10 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/sendButton"
             app:fabSize="normal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="35dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:src="@drawable/ic_baseline_send_24"/>
 
     </LinearLayout>
