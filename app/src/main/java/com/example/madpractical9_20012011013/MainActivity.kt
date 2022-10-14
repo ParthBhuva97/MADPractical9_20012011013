@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         override fun onTextReceived(sPhoneNo: String?, sMsg: String?) {
             val builder : AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
             builder.setTitle("New SMS Received")
-            builder.setMessage("$sPhoneNo\n$sMsg")
+            builder.setMessage("From : $sPhoneNo\n\n Message : $sMsg")
             builder.setCancelable(true)
             builder.setPositiveButton("OK",null);
             builder.show()
