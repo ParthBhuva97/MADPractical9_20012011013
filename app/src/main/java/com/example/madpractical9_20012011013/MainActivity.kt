@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity() {
             val phone = binding.phoneNo.text.toString()
             val msg = binding.msg.text.toString()
             sendSms(phone,msg)
+
+            val builder : AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
+            builder.setTitle("Sent SMS")
+            builder.setMessage("SMS is sent.\nPhone No : $phone \n\n Message : $msg")
+            builder.setCancelable(true)
+            builder.setPositiveButton("OK",null);
+            builder.show()
         }
 
     }
@@ -59,6 +66,7 @@ class MainActivity : AppCompatActivity() {
             builder.setTitle("New SMS Received")
             builder.setMessage("$sPhoneNo\n$sMsg")
             builder.setCancelable(true)
+            builder.setPositiveButton("OK",null);
             builder.show()
             loadSMSInbox()
         }
